@@ -4,7 +4,7 @@ from sklearn.preprocessing import StandardScaler
 
 def load_data():
     # 假设数据文件名为 'WA_Fn-UseC_-Telco-Customer-Churn.csv'
-    df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
+    df = pd.read_csv('data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv')
 
     # 删除 customerID
     df = df.drop('customerID', axis=1)

@@ -85,7 +85,7 @@ def main():
     results.append(('Boosting', acc))
 
     # 保存所有结果到 result.txt
-    with open("result.txt", "w", encoding="utf-8") as f:
+    with open("results/result.txt", "w", encoding="utf-8") as f:
         for line in report_lines:
             f.write(line + "\n")
     print("所有模型结果已保存到 result.txt")
@@ -97,13 +97,13 @@ def main():
     plt.title('ROC Curve')
     plt.legend()
     plt.tight_layout()
-    plt.savefig('roc_curve.png')
+    plt.savefig('fig/roc_curve.png')
     plt.close()
 
     # 绘制对比图
     model_names = [r[0] for r in results]
     accuracies = [r[1] for r in results]
-    plot_comparison(model_names, accuracies, save_path='model_comparison.png')
+    plot_comparison(model_names, accuracies, save_path='fig/model_comparison.png')
 
 if __name__ == "__main__":
     main()

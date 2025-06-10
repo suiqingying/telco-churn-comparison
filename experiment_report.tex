@@ -66,10 +66,10 @@
 
 该数据集特别适合客户流失预测研究，因为它包含了多种可能影响客户决策的因素，既有客户自身的特征，也有服务相关的特征，能够较为全面地反映现实业务场景中客户流失的复杂原因。
 
-\subsection{算法简介}
+\section{算法简介}
 本实验对比了三种经典机器学习算法在该数据集上的表现：
 
-\subsubsection{Logistic Regression（逻辑回归）}
+\subsection{Logistic Regression（逻辑回归）}
 逻辑回归是一种广泛应用的线性分类方法，通过Sigmoid函数将线性模型的输出转换为0-1之间的概率值：
 \begin{equation}
 P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n)}}
@@ -91,7 +91,7 @@ P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n
     \item 对特征间的多重共线性较为敏感
 \end{itemize}
 
-\subsubsection{Decision Tree（决策树）}
+\subsection{Decision Tree（决策树）}
 决策树通过递归二分法将数据划分为不同子集，形成树状结构。每个节点代表一个特征条件判断，叶节点代表分类结果。在客户流失预测中，可以生成如"如果合同类型=月付 且 账户时长<12个月，则预测为流失"的规则。
 
 \textbf{适用场景}：
@@ -110,7 +110,7 @@ P(y=1|x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n
     \item 对数据微小变化敏感，模型稳定性较差
 \end{itemize}
 
-\subsubsection{Boosting（提升方法，采用AdaBoost）}
+\subsection{Boosting（提升方法，采用AdaBoost）}
 AdaBoost（Adaptive Boosting）是一种集成学习方法，通过顺序训练多个弱分类器（通常是简单决策树），每次训练都关注前一轮分类错误的样本，最终将所有弱分类器的预测结果加权组合。
 
 \textbf{适用场景}：
@@ -171,13 +171,13 @@ Boosting            & 0.7305 & 0.7523 & 1.13 \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{model_comparison.png}
+    \includegraphics[width=0.7\textwidth]{fig/model_comparison.png}
     \caption{三种模型准确率对比}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{roc_curve.png}
+    \includegraphics[width=0.7\textwidth]{fig/roc_curve.png}
     \caption{三种模型ROC曲线及AUC对比}
 \end{figure}
 
